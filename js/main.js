@@ -1,5 +1,5 @@
 // ==========================================
-// WISHLIST FEATURE
+// WISHLIST
 // ==========================================
 
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
@@ -16,11 +16,11 @@ function toggleWishlist(plantName) {
         wishlist.splice(index, 1);
     }
     saveWishlist();
-    updateWishlistButtons();
-    displayWishlist();
+    updateButtons();
+    showWishlist();
 }
 
-function updateWishlistButtons() {
+function updateButtons() {
     document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
         let plant = btn.getAttribute('data-plant');
         let icon = btn.querySelector('i');
@@ -34,10 +34,9 @@ function updateWishlistButtons() {
     });
 }
 
-function displayWishlist() {
+function showWishlist() {
     let container = document.getElementById('wishlist-container');
     let emptyMsg = document.getElementById('empty-wishlist');
-    
     if (!container) return;
 
     if (wishlist.length === 0) {
@@ -45,25 +44,20 @@ function displayWishlist() {
         if (emptyMsg) emptyMsg.style.display = 'block';
         return;
     }
-    
     if (emptyMsg) emptyMsg.style.display = 'none';
 
-    // Get all plants from the page
-    let allPlants = document.querySelectorAll('.plant-item');
+    let plants = document.querySelectorAll('.plant-item');
     let html = '';
-    
-    allPlants.forEach(function(plant) {
+    plants.forEach(function(plant) {
         let name = plant.querySelector('.card-title')?.textContent;
-        
         if (wishlist.includes(name)) {
-            let imgSrc = plant.querySelector('img')?.getAttribute('src') || '';
+            let img = plant.querySelector('img')?.src || '';
             let price = plant.querySelector('.card-text')?.textContent || '';
-            
             html += `
                 <div class="col-md-4 col-sm-6">
-                    <div class="card plant-card h-100">
-                        <img src="${imgSrc}" class="card-img-top" alt="${name}" style="height: 200px; object-fit: cover;">
-                        <div class="card-body text-center">
+                    <div class="card plant-card">
+                        <img src="${img}" class="card-img-top" alt="${name}">
+                        <div class="card-body">
                             <h5 class="card-title">${name}</h5>
                             <p class="card-text">${price}</p>
                             <button class="btn btn-danger btn-sm remove-btn" data-plant="${name}">
@@ -75,10 +69,8 @@ function displayWishlist() {
             `;
         }
     });
-    
     container.innerHTML = html;
 
-    // Add remove event listeners
     document.querySelectorAll('.remove-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             toggleWishlist(this.getAttribute('data-plant'));
@@ -87,73 +79,61 @@ function displayWishlist() {
 }
 
 // ==========================================
-// PLANT FILTER
+// FILTER
 // ==========================================
 
 function filterPlants(filter) {
     let allPlants = document.querySelectorAll('.plant-item');
-    
     allPlants.forEach(function(plant) {
         if (filter === 'all') {
             plant.style.display = 'block';
             return;
         }
-        
         let light = plant.getAttribute('data-light');
         let pet = plant.getAttribute('data-pet');
         let show = false;
-        
-        if (filter === 'low-light' && light === 'low') {
-            show = true;
-        } else if (filter === 'pet-friendly' && pet === 'yes') {
-            show = true;
-        }
-        
+        if (filter === 'low-light' && light === 'low') show = true;
+        if (filter === 'pet-friendly' && pet === 'yes') show = true;
         plant.style.display = show ? 'block' : 'none';
     });
 }
 
 // ==========================================
-// CONTACT FORM VALIDATION
+// CONTACT FORM
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
     let form = document.getElementById('contactForm');
-    
     if (form) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            let isValid = true;
-            
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let valid = true;
             let name = document.getElementById('name').value.trim();
             let email = document.getElementById('email').value.trim();
             let message = document.getElementById('message').value.trim();
-            
+
             document.getElementById('nameError').textContent = '';
             document.getElementById('emailError').textContent = '';
             document.getElementById('messageError').textContent = '';
-            
+
             if (name === '') {
-                document.getElementById('nameError').textContent = 'Please enter your name.';
-                isValid = false;
+                document.getElementById('nameError').textContent = 'Name is required';
+                valid = false;
             }
-            
             if (email === '') {
-                document.getElementById('emailError').textContent = 'Please enter your email.';
-                isValid = false;
+                document.getElementById('emailError').textContent = 'Email is required';
+                valid = false;
             } else if (!email.includes('@') || !email.includes('.')) {
-                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
-                isValid = false;
+                document.getElementById('emailError').textContent = 'Enter a valid email';
+                valid = false;
             }
-            
             if (message === '') {
-                document.getElementById('messageError').textContent = 'Please enter your message.';
-                isValid = false;
+                document.getElementById('messageError').textContent = 'Message is required';
+                valid = false;
             }
-            
-            if (isValid) {
-                document.getElementById('successMessage').textContent = '✅ Message sent successfully! We\'ll get back to you soon.';
+
+            if (valid) {
+                document.getElementById('successMessage').textContent = '✅ Message sent!';
                 document.getElementById('successMessage').style.color = 'green';
                 form.reset();
             }
@@ -166,28 +146,23 @@ document.addEventListener('DOMContentLoaded', function() {
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Wishlist buttons
     document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             toggleWishlist(this.getAttribute('data-plant'));
         });
     });
-    
-    // Filter buttons
+
     document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             let filter = this.getAttribute('data-filter');
-            
             document.querySelectorAll('.filter-btn').forEach(function(b) {
                 b.classList.remove('active');
             });
             this.classList.add('active');
-            
             filterPlants(filter);
         });
     });
-    
-    // Initialize
-    updateWishlistButtons();
-    displayWishlist();
+
+    updateButtons();
+    showWishlist();
 });
