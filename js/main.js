@@ -1,7 +1,8 @@
 // ==========================================
-// WISHLIST
+// COMPLETE WORKING JAVASCRIPT
 // ==========================================
 
+// ---------- WISHLIST ----------
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 function saveWishlist() {
@@ -78,10 +79,7 @@ function showWishlist() {
     });
 }
 
-// ==========================================
-// FILTER
-// ==========================================
-
+// ---------- FILTER ----------
 function filterPlants(filter) {
     let allPlants = document.querySelectorAll('.plant-item');
     allPlants.forEach(function(plant) {
@@ -98,10 +96,7 @@ function filterPlants(filter) {
     });
 }
 
-// ==========================================
-// CONTACT FORM
-// ==========================================
-
+// ---------- CONTACT FORM ----------
 document.addEventListener('DOMContentLoaded', function() {
     let form = document.getElementById('contactForm');
     if (form) {
@@ -141,17 +136,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ==========================================
-// EVENT LISTENERS
-// ==========================================
-
+// ---------- EVENT LISTENERS ----------
 document.addEventListener('DOMContentLoaded', function() {
+    // Wishlist buttons
     document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             toggleWishlist(this.getAttribute('data-plant'));
         });
     });
 
+    // Filter buttons
     document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             let filter = this.getAttribute('data-filter');
@@ -163,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Initialize
     updateButtons();
     showWishlist();
 });
