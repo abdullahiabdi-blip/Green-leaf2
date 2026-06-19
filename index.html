@@ -34,17 +34,133 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="row min-vh-100 align-items-center">
                 <div class="col-lg-6">
+                    <span class="badge bg-success mb-3">🌱 New Arrivals</span>
                     <h1 class="display-3 fw-bold">Bring Nature <span class="text-green">Home</span></h1>
                     <p class="lead mt-3">Discover the perfect houseplants for your space. Easy care, beautiful greenery delivered to your door.</p>
                     <a href="shop.html" class="btn btn-primary btn-lg mt-3">Shop Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
-                   <img src="images/hero-image.jpg" alt="Beautiful houseplants" class="img-fluid rounded-4 shadow">
+                    <img src="images/hero-image.jpg" alt="Beautiful houseplants" class="img-fluid rounded-4 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant of the Week -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="images/calathea.jpg" alt="Plant of the Week" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-8">
+                    <span class="badge bg-warning text-dark mb-2">⭐ Plant of the Week</span>
+                    <h2>Calathea</h2>
+                    <p class="text-muted">KES 4,160</p>
+                    <p>Known for its stunning patterned leaves, the Calathea is a showstopper. It thrives in low to medium indirect light and loves humidity.</p>
+                    <a href="shop.html" class="btn btn-outline-primary">View Plant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Plants -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Plants</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="card plant-card">
+                        <img src="images/monstera.jpg" class="card-img-top" alt="Monstera">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Monstera</h5>
+                            <p class="card-text">KES 4,550</p>
+                            <a href="shop.html" class="btn btn-sm btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card plant-card">
+                        <img src="images/snake-plant.jpg" class="card-img-top" alt="Snake Plant">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Snake Plant</h5>
+                            <p class="card-text">KES 3,250</p>
+                            <a href="shop.html" class="btn btn-sm btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card plant-card">
+                        <img src="images/zz-plant.jpg" class="card-img-top" alt="ZZ Plant">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">ZZ Plant</h5>
+                            <p class="card-text">KES 3,900</p>
+                            <a href="shop.html" class="btn btn-sm btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card plant-card">
+                        <img src="images/spider-plant.jpg" class="card-img-top" alt="Spider Plant">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Spider Plant</h5>
+                            <p class="card-text">KES 2,600</p>
+                            <a href="shop.html" class="btn btn-sm btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="shop.html" class="btn btn-primary">View All Plants</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Why Choose GreenLeaf?</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <i class="fas fa-truck fa-3x text-green"></i>
+                    <h5 class="mt-3">Free Delivery</h5>
+                    <p class="text-muted small">On orders over KES 6,500</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fas fa-shield-alt fa-3x text-green"></i>
+                    <h5 class="mt-3">30-Day Guarantee</h5>
+                    <p class="text-muted small">Healthy plants or your money back</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fas fa-headset fa-3x text-green"></i>
+                    <h5 class="mt-3">Expert Support</h5>
+                    <p class="text-muted small">Plant care advice 24/7</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fas fa-seedling fa-3x text-green"></i>
+                    <h5 class="mt-3">Sustainably Sourced</h5>
+                    <p class="text-muted small">Eco-friendly packaging</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-5 newsletter">
+        <div class="container text-center">
+            <h3>Get Plant Care Tips</h3>
+            <p class="mb-4">Subscribe for weekly plant care guides and exclusive offers</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email address" id="newsletterEmail">
+                        <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,5 +175,17 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        function subscribeNewsletter() {
+            let email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                alert('Thank you for subscribing! Check your inbox for plant care tips.');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter your email address.');
+            }
+        }
+    </script>
 </body>
 </html>
