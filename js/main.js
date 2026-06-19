@@ -1,8 +1,5 @@
-// ==========================================
-// COMPLETE WORKING JAVASCRIPT
-// ==========================================
+// FINAL WORKING VERSION
 
-// ---------- WISHLIST ----------
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
 function saveWishlist() {
@@ -18,11 +15,12 @@ function toggleWishlist(plantName) {
     }
     saveWishlist();
     updateButtons();
-    showWishlist();
+    displayWishlist();
 }
 
 function updateButtons() {
-    document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
+    let buttons = document.querySelectorAll('.wishlist-btn');
+    buttons.forEach(function(btn) {
         let plant = btn.getAttribute('data-plant');
         let icon = btn.querySelector('i');
         if (wishlist.includes(plant)) {
@@ -35,7 +33,7 @@ function updateButtons() {
     });
 }
 
-function showWishlist() {
+function displayWishlist() {
     let container = document.getElementById('wishlist-container');
     let emptyMsg = document.getElementById('empty-wishlist');
     if (!container) return;
@@ -138,14 +136,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ---------- EVENT LISTENERS ----------
 document.addEventListener('DOMContentLoaded', function() {
-    // Wishlist buttons
     document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             toggleWishlist(this.getAttribute('data-plant'));
         });
     });
 
-    // Filter buttons
     document.querySelectorAll('.filter-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
             let filter = this.getAttribute('data-filter');
@@ -157,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize
     updateButtons();
-    showWishlist();
+    displayWishlist();
 });
