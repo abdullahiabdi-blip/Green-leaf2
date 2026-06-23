@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GreenLeaf | Shop</title>
+    
+    <!-- Bootstrap 5 CSS - for responsive layout -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Font Awesome - for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
+    <!-- Custom CSS - green theme and styling -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- ===== NAVIGATION BAR ===== -->
+    <!-- Contains logo and links to all 7 pages. Collapses on mobile. -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html"><i class="fas fa-leaf"></i> GreenLeaf</a>
@@ -31,17 +38,20 @@
         </div>
     </nav>
 
-    <!-- Shop Section -->
+    <!-- ===== SHOP SECTION ===== -->
+    <!-- Displays all 9 plants with filter buttons and wishlist options -->
     <section class="shop py-5">
         <div class="container">
             <h1 class="text-center mb-4">Our Plants</h1>
 
+            <!-- Filter Buttons - allows users to filter plants by category -->
             <div class="text-center mb-4">
                 <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
                 <button class="btn btn-outline-primary filter-btn" data-filter="low-light">Low Light</button>
                 <button class="btn btn-outline-primary filter-btn" data-filter="pet-friendly">Pet Friendly</button>
             </div>
 
+            <!-- Plant Grid - 9 plants displayed in a responsive grid -->
             <div class="row g-4" id="plant-grid">
 
                 <!-- Plant 1: Monstera -->
@@ -100,7 +110,7 @@
                     </div>
                 </div>
 
-                <!-- Plant 5: Spider Plant -->
+                <!-- Plant 5: Spider Plant - Pet Friendly -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="bright" data-pet="yes">
                     <div class="card plant-card">
                         <img src="images/spider-plant.jpg" class="card-img-top" alt="Spider Plant">
@@ -156,7 +166,7 @@
                     </div>
                 </div>
 
-                <!-- Plant 9: Calathea (NEW) -->
+                <!-- Plant 9: Calathea - Pet Friendly -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="low" data-pet="yes">
                     <div class="card plant-card">
                         <img src="images/calathea.jpg" class="card-img-top" alt="Calathea">
@@ -174,13 +184,18 @@
         </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
+    <!-- Copyright information -->
     <footer>
         <div class="container">
             <p>&copy; 2026 GreenLeaf. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Bootstrap JavaScript - for responsive features -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript - wishlist, filter, form validation -->
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
 
 /* ==========================================
-   ROOT VARIABLES
+   ROOT VARIABLES - Colors, shadows, transitions
 ========================================== */
 :root {
     --primary: #2D6A4F;
@@ -388,7 +388,7 @@ footer p {
 }
 
 /* ==========================================
-   RESPONSIVE
+   RESPONSIVE - Mobile, Tablet, Desktop
 ========================================== */
 @media (max-width: 992px) {
     .hero h1 {

@@ -1,4 +1,7 @@
-// FINAL WORKING VERSION
+// ==========================================
+// WISHLIST FEATURE
+// Saves plants to localStorage when user clicks heart
+// ==========================================
 
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
 
@@ -77,7 +80,11 @@ function displayWishlist() {
     });
 }
 
-// ---------- FILTER ----------
+// ==========================================
+// PLANT FILTER
+// Shows only plants that match the selected category
+// ==========================================
+
 function filterPlants(filter) {
     let allPlants = document.querySelectorAll('.plant-item');
     allPlants.forEach(function(plant) {
@@ -94,7 +101,11 @@ function filterPlants(filter) {
     });
 }
 
-// ---------- CONTACT FORM ----------
+// ==========================================
+// CONTACT FORM VALIDATION
+// Checks if name, email, and message are filled
+// ==========================================
+
 document.addEventListener('DOMContentLoaded', function() {
     let form = document.getElementById('contactForm');
     if (form) {
@@ -134,7 +145,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ---------- EVENT LISTENERS ----------
+// ==========================================
+// EVENT LISTENERS
+// Runs when page loads - connects buttons to functions
+// ==========================================
+
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
