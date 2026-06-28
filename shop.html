@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GreenLeaf | Shop</title>
     
-    <!-- Bootstrap 5 CSS - for responsive layout -->
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     
-    <!-- Font Awesome - for icons -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     
-    <!-- Custom CSS - green theme and styling -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-    <!-- ===== NAVIGATION BAR ===== -->
-    <!-- Contains logo and links to all 7 pages. Collapses on mobile. -->
+    <!-- ===== NAVIGATION ===== -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html"><i class="fas fa-leaf"></i> GreenLeaf</a>
@@ -38,23 +37,22 @@
         </div>
     </nav>
 
-    <!-- ===== SHOP SECTION ===== -->
-    <!-- Displays all 9 plants with filter buttons and wishlist options -->
+    <!-- ===== PLANT CATALOG ===== -->
     <section class="shop py-5">
         <div class="container">
             <h1 class="text-center mb-4">Our Plants</h1>
 
-            <!-- Filter Buttons - allows users to filter plants by category -->
+            <!-- Filter Controls -->
             <div class="text-center mb-4">
                 <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
                 <button class="btn btn-outline-primary filter-btn" data-filter="low-light">Low Light</button>
                 <button class="btn btn-outline-primary filter-btn" data-filter="pet-friendly">Pet Friendly</button>
             </div>
 
-            <!-- Plant Grid - 9 plants displayed in a responsive grid -->
+            <!-- Plant Grid -->
             <div class="row g-4" id="plant-grid">
 
-                <!-- Plant 1: Monstera -->
+                <!-- Monstera -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="bright" data-pet="no">
                     <div class="card plant-card">
                         <img src="images/monstera.jpg" class="card-img-top" alt="Monstera">
@@ -68,13 +66,13 @@
                     </div>
                 </div>
 
-                <!-- Plant 2: Snake Plant -->
+                <!-- Snake Plant -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="low" data-pet="no">
                     <div class="card plant-card">
                         <img src="images/snake-plant.jpg" class="card-img-top" alt="Snake Plant">
                         <div class="card-body">
                             <h5 class="card-title">Snake Plant</h5>
-                            <p class="card-text">KES 3,250</p>
+                            <p class="card-text">KES 2,999</p>
                             <button class="btn btn-outline-primary btn-sm wishlist-btn" data-plant="Snake Plant">
                                 <i class="far fa-heart"></i> Wishlist
                             </button>
@@ -82,22 +80,22 @@
                     </div>
                 </div>
 
-                <!-- Plant 3: Pothos (ON SALE) -->
-<div class="col-md-3 col-sm-6 plant-item" data-light="low" data-pet="no">
-    <div class="card plant-card">
-        <img src="images/pothos.jpg" class="card-img-top" alt="Pothos">
-        <div class="card-body">
-            <span class="badge bg-danger mb-2">🔥 Sale</span>
-            <h5 class="card-title">Pothos</h5>
-            <p class="card-text"><del>KES 1,950</del> <strong>KES 1,499</strong></p>
-            <button class="btn btn-outline-primary btn-sm wishlist-btn" data-plant="Pothos">
-                <i class="far fa-heart"></i> Wishlist
-            </button>
-        </div>
-    </div>
-</div>
+                <!-- Pothos (On Sale) -->
+                <div class="col-md-3 col-sm-6 plant-item" data-light="low" data-pet="no">
+                    <div class="card plant-card">
+                        <img src="images/pothos.jpg" class="card-img-top" alt="Pothos">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">🔥 Sale</span>
+                            <h5 class="card-title">Pothos</h5>
+                            <p class="card-text"><del>KES 1,950</del> <strong>KES 1,499</strong></p>
+                            <button class="btn btn-outline-primary btn-sm wishlist-btn" data-plant="Pothos">
+                                <i class="far fa-heart"></i> Wishlist
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Plant 4: Fiddle Leaf Fig -->
+                <!-- Fiddle Leaf Fig -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="bright" data-pet="no">
                     <div class="card plant-card">
                         <img src="images/fiddle-leaf.jpg" class="card-img-top" alt="Fiddle Leaf Fig">
@@ -111,7 +109,7 @@
                     </div>
                 </div>
 
-                <!-- Plant 5: Spider Plant - Pet Friendly -->
+                <!-- Spider Plant -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="bright" data-pet="yes">
                     <div class="card plant-card">
                         <img src="images/spider-plant.jpg" class="card-img-top" alt="Spider Plant">
@@ -125,7 +123,7 @@
                     </div>
                 </div>
 
-                <!-- Plant 6: ZZ Plant -->
+                <!-- ZZ Plant -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="low" data-pet="no">
                     <div class="card plant-card">
                         <img src="images/zz-plant.jpg" class="card-img-top" alt="ZZ Plant">
@@ -139,7 +137,7 @@
                     </div>
                 </div>
 
-                <!-- Plant 7: Aloe Vera -->
+                <!-- Aloe Vera -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="bright" data-pet="no">
                     <div class="card plant-card">
                         <img src="images/aloe-vera.jpg" class="card-img-top" alt="Aloe Vera">
@@ -153,7 +151,7 @@
                     </div>
                 </div>
 
-                <!-- Plant 8: String of Pearls -->
+                <!-- String of Pearls -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="bright" data-pet="no">
                     <div class="card plant-card">
                         <img src="images/string-of-pearls.jpg" class="card-img-top" alt="String of Pearls">
@@ -167,7 +165,7 @@
                     </div>
                 </div>
 
-                <!-- Plant 9: Calathea - Pet Friendly -->
+                <!-- Calathea -->
                 <div class="col-md-3 col-sm-6 plant-item" data-light="low" data-pet="yes">
                     <div class="card plant-card">
                         <img src="images/calathea.jpg" class="card-img-top" alt="Calathea">
@@ -186,23 +184,22 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <!-- Copyright information -->
     <footer>
         <div class="container">
             <p>&copy; 2026-2027 GreenLeaf. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-<a href="#" class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4" 
-   style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; z-index: 999;">
-    <i class="fas fa-arrow-up"></i>
-</a>
+    <!-- ===== BACK TO TOP ===== -->
+    <a href="#" class="btn btn-success rounded-circle position-fixed bottom-0 end-0 m-4" 
+       style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-    <!-- Bootstrap JavaScript - for responsive features -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Custom JavaScript - wishlist, filter, form validation -->
+    <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>

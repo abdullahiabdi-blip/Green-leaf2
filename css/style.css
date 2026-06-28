@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
 
 /* ==========================================
-   ROOT VARIABLES - Colors, shadows, transitions
+   ROOT VARIABLES
 ========================================== */
 :root {
     --primary: #2D6A4F;
@@ -22,7 +22,7 @@
 }
 
 /* ==========================================
-   GLOBAL STYLES
+   GLOBAL RESET & BASE
 ========================================== */
 * {
     margin: 0;
@@ -53,7 +53,7 @@ a:hover {
 }
 
 /* ==========================================
-   TEXT COLORS
+   UTILITY
 ========================================== */
 .text-green {
     color: var(--primary);
@@ -98,7 +98,7 @@ a:hover {
 }
 
 /* ==========================================
-   NAVBAR
+   NAVIGATION
 ========================================== */
 .navbar {
     background-color: var(--white);
@@ -155,7 +155,7 @@ a:hover {
 }
 
 /* ==========================================
-   HERO SECTION
+   HERO
 ========================================== */
 .hero {
     background: linear-gradient(135deg, #f0f7f4 0%, #e8f3ee 100%);
@@ -291,14 +291,7 @@ a:hover {
 }
 
 /* ==========================================
-   ABOUT PAGE
-========================================== */
-.about .bg-light {
-    background-color: var(--light-bg);
-}
-
-/* ==========================================
-   CONTACT FORM
+   FORMS
 ========================================== */
 .form-control {
     border-radius: 12px;
@@ -388,7 +381,7 @@ footer p {
 }
 
 /* ==========================================
-   RESPONSIVE - Mobile, Tablet, Desktop
+   RESPONSIVE
 ========================================== */
 @media (max-width: 992px) {
     .hero h1 {

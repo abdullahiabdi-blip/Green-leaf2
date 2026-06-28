@@ -1,6 +1,5 @@
 // ==========================================
-// WISHLIST FEATURE
-// Saves plants to localStorage when user clicks heart
+// WISHLIST
 // ==========================================
 
 let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
@@ -82,7 +81,6 @@ function displayWishlist() {
 
 // ==========================================
 // PLANT FILTER
-// Shows only plants that match the selected category
 // ==========================================
 
 function filterPlants(filter) {
@@ -103,7 +101,6 @@ function filterPlants(filter) {
 
 // ==========================================
 // CONTACT FORM VALIDATION
-// Checks if name, email, and message are filled
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -147,7 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ==========================================
 // EVENT LISTENERS
-// Runs when page loads - connects buttons to functions
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
